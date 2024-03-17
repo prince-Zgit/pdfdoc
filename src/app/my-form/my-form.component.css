@@ -1,0 +1,12 @@
+.modal{
+  display:none;
+}
+.modal.show{
+  display:block;
+}
+.form-container{
+  height:100vh;
+  width:100%;
+  background-image:url("../../assets/images/bg-image.jpg");
+  background-size:cover;
+}

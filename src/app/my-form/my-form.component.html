@@ -1,0 +1,122 @@
+<div class="form-container">
+  <div class="container">
+    <div class="row">
+      <div class="float-end mt-2">
+        <img src="../../assets/images/avtar.png" alt="Avatar" class="img-fluid rounded-circle me-2" style="width: 50px;">
+       <span class="text-white me-2" *ngIf="userId">Welcome {{userId}}</span>
+        <button type="button" class="btn btn-danger btn-md" (click)="logOut()">Logout</button>
+      </div>
+    <div class="mt-0 w-100">
+      <div class="col-md-6 m-auto">
+         <div class="card p-3">
+            <p>Select Certificate Type:</p>
+            <div class="row btn-group">
+              <div class="col-md-6 mt-2">
+                <button type="button" class="btn btn-primary btn-lg w-100" (click)="openBankCertificateModal()">Bank Certificate</button>
+              </div>
+              <div class="col-md-6 mt-2">
+                <button type="button" class="btn btn-primary btn-lg w-100" (click)="openRoadCertificateModal()">Road Certificate</button>
+              </div>
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="modal" [ngClass]="{ 'show': showBankCertificateModal }">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bank Certificate</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="closeBankCertificateModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="bankCertificateForm" (ngSubmit)="onBankCertificateSubmit()">
+            <div class="mb-3 form-group">
+              <label for="stampto">Stamp to:</label>
+              <input id="stampto" type="text" class="form-control" formControlName="stampto">
+              <div *ngIf="bankCertificateForm.controls['stampto'].invalid && bankCertificateForm.controls['stampto'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="stampcircle">Stamp circle:</label>
+              <input id="stampcircle" type="text" class="form-control" formControlName="stampcircle">
+              <div *ngIf="bankCertificateForm.controls['stampcircle'].invalid && bankCertificateForm.controls['stampcircle'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="stamploc">Stamp loc:</label>
+              <input id="stamploc" type="text" class="form-control" formControlName="stamploc">
+              <div *ngIf="bankCertificateForm.controls['stamploc'].invalid && bankCertificateForm.controls['stamploc'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="stampacc">Stamp Acc:</label>
+              <input id="stampacc" type="text" class="form-control" formControlName="stampacc">
+              <div *ngIf="bankCertificateForm.controls['stampacc'].invalid && bankCertificateForm.controls['stampacc'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" [ngClass]="{ 'show': showRoadCertificateModal }">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Road Certificate</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="closeRoadCertificateModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="roadCertificateForm" (ngSubmit)="onRoadCertificateSubmit()">
+            <div class="mb-3 form-group">
+              <label for="stampto">Stamp to:</label>
+              <input id="stampto" type="text" class="form-control" formControlName="stampto">
+              <div *ngIf="roadCertificateForm.controls['stampto'].invalid && roadCertificateForm.controls['stampto'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="stampcircle">Stamp circle:</label>
+              <input id="stampcircle" type="text" class="form-control" formControlName="stampcircle">
+              <div *ngIf="roadCertificateForm.controls['stampcircle'].invalid && roadCertificateForm.controls['stampcircle'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="stamploc">Stamp loc:</label>
+              <input id="stamploc" type="text" class="form-control" formControlName="stamploc">
+              <div *ngIf="roadCertificateForm.controls['stamploc'].invalid && roadCertificateForm.controls['stamploc'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="roadName">Road Name:</label>
+              <input id="roadName" type="text" class="form-control" formControlName="roadName">
+              <div *ngIf="roadCertificateForm.controls['roadName'].invalid && roadCertificateForm.controls['roadName'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="amount">Amount:</label>
+              <input id="amount" type="text" class="form-control" formControlName="amount">
+              <div *ngIf="roadCertificateForm.controls['amount'].invalid && roadCertificateForm.controls['amount'].touched" class="text-danger">
+                Invalid input
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,45 @@
+<div class="full-body">
+  <div class="buttons-container no-print buttons-group">
+    <button (click)="back()" class="btn btn-success">Go Back</button>
+    <button (click)="print()" class="btn btn-success mx-2">Print</button>
+  </div>
+  <div class="page">
+    <section class="header">
+      <div class="row">
+        <div class="col-12 mb-2">
+          <img src="../assets/images/SBI-logo.svg.webp" alt="logo">
+          </div>
+          <div class="col-6">
+          <div class="stamp-left">
+            <h3>STATE BANK OF INDIA</h3>
+            <h3>DUDHI BRANCH – 12300</h3>
+            <h3>SONEBHDRA</h3>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="stamp-right float-end">
+          <h3>To</h3>
+          <h3>The {{getForm.stampto}}</h3>
+          <h3>{{getForm.stampcircle}}</h3>
+          <h3>{{getForm.stamploc}}</h3>
+        </div>
+        </div>
+      </div>
+    </section>
+    <section class="body">
+      <h5 class="mb-4 text-center">Bank Certificate</h5>
+      <p class="ref mb-4">This is to certify that <b>Mr. Shailendra Kumar</b> S/o Umesh Chandra R/o Dudhi
+        Sonebhadra, is reputed Customer.</p>
+      <p class="content">If the contract for work namely <b>“{{getForm.roadName}}”</b> is
+        awarded to the above firm, we shall be able to provide overdraft/credit to the
+        Extent <b>{{getForm.amount}}</b> to the firm to meet their working capital requirement for
+        executing the above contract after fulfilling the norms of the Bank.
+        </p>
+    </section>
+    <section class="footer">
+      <p class="thank mb-5">Thanking You</p>
+        <p class="faithful mb-3">Yours faithfully</p>
+        <p class="man-stamp">Branch Manage</p>
+    </section>
+  </div>
+</div>
